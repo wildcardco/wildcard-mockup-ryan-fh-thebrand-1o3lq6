@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FH THEBRAND — The Power of Presentation | Personal Brand Photography & Video</title>
+<meta name="description" content="FH THEBRAND turns entrepreneurs and creators into cinematic visual stories — hybrid photo + video brand sessions built around the power of presentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c0b0a;
+  --char:#161412;
+  --char2:#1e1b18;
+  --bone:#efe9df;
+  --bone-dim:#b8b0a3;
+  --amber:#e6a530;
+  --amber-deep:#c4831a;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Oswald','Arial Narrow',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--bone);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.6;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+}
+::selection{background:var(--amber);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.05;text-transform:uppercase;font-weight:700}
+
+/* film grain */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+}
+
+/* skip link */
+.skip{position:absolute;left:-999px;top:0;background:var(--amber);color:var(--ink);padding:.6rem 1rem;z-index:99;font-weight:600;text-transform:uppercase}
+.skip:focus{left:0}
+
+/* ===== NAV ===== */
+header.top{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 1.25rem;
+  mix-blend-mode:difference;
+}
+header.top .mark{font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.9rem;text-decoration:none}
+header.top nav{display:flex;gap:1.25rem}
+header.top nav a{
+  text-decoration:none;text-transform:uppercase;font-size:.72rem;letter-spacing:.22em;
+  opacity:.85;position:relative;padding-bottom:2px;
+}
+header.top nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .3s ease}
+header.top nav a:hover::after,header.top nav a:focus::after{width:100%}
+@media(max-width:560px){header.top nav a:nth-child(2){display:none}}
+
+/* ===== HERO — title card over full-bleed reel frame ===== */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero .frame{
+  position:absolute;inset:0;
+  background:url('https://i.vimeocdn.com/video/1687716603-e787781b5ee0d6fd02315db5d9264e139e5543b781b694f14768f21ea8266a43-d_1280x720?r=pad') center/cover no-repeat var(--char);
+  filter:saturate(.85) contrast(1.1);
+  animation:kenburns 22s ease-in-out infinite alternate;
+}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(60% 55% at 62% 38%, rgba(230,165,48,.14), transparent 70%),
+    linear-gradient(to bottom, rgba(12,11,10,.55), rgba(12,11,10,.25) 40%, rgba(12,11,10,.92) 92%);
+}
+/* letterbox bars — director's reel */
+.hero .bar{position:absolute;left:0;right:0;height:clamp(22px,4vh,44px);background:var(--ink);z-index:3}
+.hero .bar.t{top:0}.hero .bar.b{bottom:0}
+.title-card{
+  position:relative;z-index:4;
+  width:100%;
+  padding:0 1.25rem clamp(4rem,10vh,7rem);
+}
+.title-card .kicker{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--amber);
+  margin-bottom:1rem;
+}
+.title-card .kicker svg{flex:none}
+.wordmark{
+  font-size:clamp(3.4rem,14vw,11.5rem);
+  letter-spacing:-.01em;
+  transform:rotate(-3deg) translateX(-1.5vw);
+  transform-origin:left bottom;
+  margin-left:-.04em;
+  text-shadow:0 30px 60px rgba(0,0,0,.55);
+}
+.wordmark .the{
+  display:block;font-family:var(--serif);font-style:italic;font-weight:600;text-transform:none;
+  font-size:clamp(1.4rem,4.5vw,3.4rem);letter-spacing:.02em;color:var(--amber);
+  margin:.15em 0 .05em .2em;
+}
+.hero-sub{
+  max-width:34ch;margin-top:1.4rem;
+  font-size:clamp(.95rem,1.6vw,1.15rem);color:var(--bone-dim);font-weight:400;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;text-transform:uppercase;
+  font-weight:600;letter-spacing:.2em;font-size:.78rem;
+  padding:.95rem 1.8rem;border:1px solid var(--amber);
+  color:var(--ink);background:var(--amber);
+  transition:background .25s,color .25s,transform .25s;
+}
+.btn:hover,.btn:focus{background:transparent;color:var(--amber);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--bone);border-color:rgba(239,233,223,.35)}
+.btn.ghost:hover,.btn.ghost:focus{border-color:var(--amber);color:var(--amber)}
+.rec{
+  position:absolute;z-index:4;top:clamp(38px,7vh,70px);right:1.25rem;
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim);
+}
+.rec .dot{width:9px;height:9px;border-radius:50%;background:#d43b2a;animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+
+/* scroll reveal (progressive) */
+.reveal{opacity:1}
+@supports(animation-timeline:view()){
+  .reveal{
+    animation:rise both;
+    animation-timeline:view();
+    animation-range:entry 0% entry 42%;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .frame,.rec .dot{animation:none}
+  .reveal{animation:none!important}
+}
+
+/* ===== running marquee divider ===== */
+.strip{
+  border-top:1px solid rgba(239,233,223,.12);border-bottom:1px solid rgba(239,233,223,.12);
+  overflow:hidden;white-space:nowrap;padding:.85rem 0;background:var(--char);
+}
+.strip .track{display:inline-block;animation:scroll 26s linear infinite}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.strip span{
+  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--bone-dim);
+  padding:0 1.6rem;
+}
+.strip span em{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:.04em;color:var(--amber);font-size:.95rem}
+@media(prefers-reduced-motion:reduce){.strip .track{animation:none}}
+
+/* ===== sections ===== */
+section{padding:clamp(4.5rem,10vw,8.5rem) 1.25rem}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{
+  font-size:.7rem;letter-spacing:.36em;text-transform:uppercase;color:var(--amber);
+  display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--amber)}
+
+/* PHILOSOPHY */
+.philo{background:var(--ink)}
+.philo-grid{display:grid;gap:2.5rem}
+@media(min-width:860px){.philo-grid{grid-template-columns:7fr 5fr;align-items:end}}
+.philo h2{font-size:clamp(2.2rem,6vw,4.6rem);max-width:14ch}
+.philo h2 .em{font-family:var(--serif);font-style:italic;font-weight:600;text-transform:none;color:var(--amber)}
+.philo p{color:var(--bone-dim);max-width:46ch;font-size:1.02rem}
+.philo p+p{margin-top:1rem}
+.philo strong{color:var(--bone);font-weight:500}
+
+/* SERVICES — film credits */
+.credits{background:var(--char);border-top:1px solid rgba(239,233,223,.08)}
+.credits ol{list-style:none;counter-reset:sc}
+.credit{
+  counter-increment:sc;
+  display:grid;grid-template-columns:auto 1fr;gap:1.1rem 1.6rem;align-items:baseline;
+  padding:1.8rem 0;border-bottom:1px solid rgba(239,233,223,.12);
+  transition:padding-left .3s ease;
+}
+.credit:hover{padding-left:.8rem}
+.credit::before{
+  content:"0" counter(sc);
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--amber);
+}
+.credit h3{font-size:clamp(1.35rem,3.6vw,2.3rem);font-weight:600;transition:color .25s}
+.credit:hover h3{color:var(--amber)}
+.credit p{grid-column:2;color:var(--bone-dim);max-width:56ch;font-size:.95rem}
+@media(min-width:860px){
+  .credit{grid-template-columns:3.5rem 1fr 1fr}
+  .credit p{grid-column:3;grid-row:1}
+}
+
+/* ACTS — the process */
+.acts{background:var(--ink)}
+.acts-grid{display:grid;gap:1px;background:rgba(239,233,223,.12);border:1px solid rgba(239,233,223,.12)}
+@media(min-width:760px){.acts-grid{grid-template-columns:repeat(3,1fr)}}
+.act{background:var(--ink);padding:2.2rem 1.6rem 2.6rem;position:relative;overflow:hidden;transition:background .3s}
+.act:hover{background:var(--char2)}
+.act .roman{
+  font-family:var(--serif);font-style:italic;font-size:4.2rem;line-height:1;color:transparent;
+  -webkit-text-stroke:1px rgba(230,165,48,.65);display:block;margin-bottom:1.1rem;
+}
+.act h3{font-size:1.2rem;letter-spacing:.1em;font-weight:600;margin-bottom:.7rem}
+.act p{color:var(--bone-dim);font-size:.95rem}
+
+/* PROOF — spotlight quote */
+.proof{
+  background:
+    radial-gradient(55% 70% at 50% 0%, rgba(230,165,48,.13), transparent 70%),
+    var(--char);
+  text-align:center;border-top:1px solid rgba(239,233,223,.08);
+}
+.stars{display:flex;justify-content:center;gap:.35rem;margin-bottom:1.4rem}
+.stars svg{width:22px;height:22px;fill:var(--amber)}
+.proof blockquote{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.5rem,4.2vw,2.7rem);line-height:1.3;max-width:24ch;margin:0 auto;
+}
+.proof figcaption{margin-top:1.4rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim)}
+
+/* BOOK */
+.book{background:var(--ink);position:relative}
+.book .wrap{display:grid;gap:2.5rem}
+@media(min-width:860px){.book .wrap{grid-template-columns:1.2fr 1fr;align-items:center}}
+.book h2{font-size:clamp(2.4rem,7vw,5rem)}
+.book h2 .em{font-family:var(--serif);font-style:italic;font-weight:600;text-transform:none;color:var(--amber);display:block}
+.book p{color:var(--bone-dim);max-width:42ch;margin-top:1.2rem}
+.slate{
+  border:1px solid rgba(239,233,223,.15);background:var(--char);padding:2.2rem 1.8rem;
+  position:relative;
+}
+.slate::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:14px;
+  background:repeating-linear-gradient(-45deg,var(--amber) 0 12px,var(--ink) 12px 24px);
+}
+.slate dl{margin-top:.8rem}
+.slate dt{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--amber);margin-top:1.3rem}
+.slate dd{font-size:1.15rem;font-weight:500;margin-top:.25rem}
+.slate dd a{text-decoration:none;border-bottom:1px solid rgba(230,165,48,.4);transition:color .25s,border-color .25s;word-break:break-all}
+.slate dd a:hover,.slate dd a:focus{color:var(--amber);border-color:var(--amber)}
+.slate .btn{margin-top:1.8rem;width:100%;text-align:center}
+
+/* FOOTER */
+footer{
+  border-top:1px solid rgba(239,233,223,.1);
+  padding:2.2rem 1.25rem 2.6rem;background:var(--ink);
+}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:baseline}
+footer .fmark{font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.85rem}
+footer .fmark em{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;color:var(--amber);font-weight:600}
+footer p{font-size:.72rem;letter-spacing:.14em;color:var(--bone-dim);text-transform:uppercase}
+footer a{color:var(--bone-dim)}
+footer a:hover{color:var(--amber)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="mark" href="#top">FH&nbsp;THEBRAND</a>
+  <nav aria-label="Primary">
+    <a href="#philosophy">Philosophy</a>
+    <a href="#sessions">Sessions</a>
+    <a href="#book">Book</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO: full-bleed reel frame, rotated title card -->
+<section class="hero" id="top" aria-label="FH THEBRAND — personal brand photography and video">
+  <div class="frame" role="img" aria-label="Cinematic still from an FH THEBRAND brand film"></div>
+  <div class="bar t" aria-hidden="true"></div>
+  <div class="bar b" aria-hidden="true"></div>
+  <p class="rec" aria-hidden="true"><span class="dot"></span> REC &nbsp;·&nbsp; BRAND FILM 001</p>
+
+  <div class="title-card">
+    <p class="kicker">
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="none" stroke="#e6a530"/><circle cx="7" cy="7" r="2.4" fill="#e6a530"/></svg>
+      A personal brand production
+    </p>
+    <h1 class="wordmark">FH&nbsp;THEBRAND
+      <span class="the">the power of presentation</span>
+    </h1>
+    <p class="hero-sub">Cinematic photo + video sessions that package entrepreneurs, coaches, and creators into a story people can't scroll past.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#book">Book a brand session</a>
+      <a class="btn ghost" href="#philosophy">Why presentation wins</a>
+    </div>
+  </div>
+</section>
+
+<!-- marquee divider -->
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>Bring your story to life <em>·</em> Photo + Video <em>·</em> <em>The Power of Presentation</em> <em>·</em> Story-first branding <em>·</em> Built for social <em>·</em></span><span>Bring your story to life <em>·</em> Photo + Video <em>·</em> <em>The Power of Presentation</em> <em>·</em> Story-first branding <em>·</em> Built for social <em>·</em></span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philo" id="philosophy">
+  <div class="wrap philo-grid reveal">
+    <div>
+      <p class="eyebrow">The Philosophy</p>
+      <h2>People don't buy what you do. They buy <span class="em">how you show up.</span></h2>
+    </div>
+    <div>
+      <p>A headshot proves you exist. A brand story proves you matter. FH THEBRAND was built on one belief — <strong>presentation is power</strong> — and every session is directed like a short film about you: your work, your world, your why.</p>
+      <p>That's why every shoot is a hybrid production. You leave with <strong>stills and motion from the same session</strong> — polished imagery for your website and press, plus reels and video cut for the feeds where your audience actually lives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES: film-credit list -->
+<section class="credits" id="sessions">
+  <div class="wrap reveal">
+    <p class="eyebrow">The Sessions</p>
+    <ol>
+      <li class="credit">
+        <h3>Personal Branding Session</h3>
+        <p>The flagship. A directed photo session built around your story — wardrobe, setting, and shot list planned so every frame says something about your brand.</p>
+      </li>
+      <li class="credit">
+        <h3>Brand Video &amp; Reels</h3>
+        <p>Short-form video and reel production that gives your brand motion — cinematic intros, behind-the-scenes energy, and content cut for social from day one.</p>
+      </li>
+      <li class="credit">
+        <h3>Executive &amp; Entrepreneur Headshots</h3>
+        <p>Not the gray-backdrop kind. Headshots with edge and intention, lit and framed like a cover — for founders, execs, and professionals who lead with presence.</p>
+      </li>
+      <li class="credit">
+        <h3>Social Media Content Shoots</h3>
+        <p>A bank of ready-to-post photo and video content in one session, so you're marketing consistently instead of scrambling for something to share.</p>
+      </li>
+      <li class="credit">
+        <h3>Lifestyle &amp; Story-Driven Business Photography</h3>
+        <p>Your process, your space, your people — documentary-style imagery that shows the story behind the business, not just the product.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PROCESS: three acts -->
+<section class="acts" aria-labelledby="acts-h">
+  <div class="wrap reveal">
+    <p class="eyebrow">How a session unfolds</p>
+    <h2 id="acts-h" style="font-size:clamp(2rem,5.5vw,3.6rem);margin-bottom:2.2rem;">Your story, in three acts</h2>
+    <div class="acts-grid">
+      <article class="act">
+        <span class="roman" aria-hidden="true">I</span>
+        <h3>The Treatment</h3>
+        <p>We start with a consultation call. Who you are, who you serve, and how you want to be seen. From that, your session gets a direction — not a generic shot list.</p>
+      </article>
+      <article class="act">
+        <span class="roman" aria-hidden="true">II</span>
+        <h3>The Shoot</h3>
+        <p>Photo and video captured in one directed session, wherever your story is being built — your studio, your city, your element. You're coached through every frame.</p>
+      </article>
+      <article class="act">
+        <span class="roman" aria-hidden="true">III</span>
+        <h3>The Premiere</h3>
+        <p>Delivery built for use: polished stills for web and print, reels and video cut for social — a complete presentation package, ready to publish.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <figure class="reveal">
+    <div class="stars" aria-label="Rated 5 out of 5 stars">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+    </div>
+    <blockquote>A perfect five-star record. Every client, every session.</blockquote>
+    <figcaption>5.0 rating · 7 client reviews · Google</figcaption>
+  </figure>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <div class="wrap reveal">
+    <div>
+      <p class="eyebrow">Next Step</p>
+      <h2>Ready for your <span class="em">opening scene?</span></h2>
+      <p>Sessions travel to you — your studio, your storefront, your city. It starts with a consultation call: tell us your story, and we'll tell you how we'd shoot it.</p>
+    </div>
+    <div class="slate">
+      <dl>
+        <dt>Call or text</dt>
+        <dd><a href="tel:+17732453481">(773) 245-3481</a></dd>
+        <dt>Currently on the site</dt>
+        <dd><a href="https://fhthebrand.godaddysites.com">fhthebrand.godaddysites.com</a></dd>
+        <dt>Availability</dt>
+        <dd>Mobile &amp; session-based — booked by consultation</dd>
+      </dl>
+      <a class="btn" href="tel:+17732453481">Start your visual story</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fmark">FH THEBRAND — <em>the power of presentation</em></p>
+    <p>© 2026 FH THEBRAND · <a href="tel:+17732453481">(773) 245-3481</a></p>
+    <p>Website sample by Wild Card Creative Co</p>
+  </div>
+</footer>
+
+</body>
+</html>
